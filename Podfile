@@ -15,16 +15,7 @@ target 'SportArena' do
   pod 'Crashlytics'
   pod 'Firebase/Messaging'
   pod 'Kingfisher', '~> 4.0'
-
-  target 'SportArenaTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'SportArenaUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
+  pod 'SwiftSoup'
 
 
 end

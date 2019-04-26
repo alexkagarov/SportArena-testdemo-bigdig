@@ -149,16 +149,6 @@ extension AnotherMainPageViewController: UITableViewDataSource {
         default:
             return 0
         }
-        
-//        var count: Int?
-//
-//        if section == 0 && section == 1{
-//            count = self.topNewsArray!.count
-//        } else if section == 2 {
-//            count = self.mainNewsArray!.count
-//        }
-//
-//        return count!
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

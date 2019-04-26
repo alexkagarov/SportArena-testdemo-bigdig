@@ -28,7 +28,7 @@ class MainPageViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "fv2newsbody") {
+        if (segue.identifier == "NewsPageSegue") {
             let NewsBodyViewController = segue.destination as! NewsBodyViewController
             NewsBodyViewController.title_news = title_segue
             print (id_segue)

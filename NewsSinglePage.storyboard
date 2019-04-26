@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="h14-VN-6dJ">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Новость-->
+        <scene sceneID="byj-ex-4Ee">
+            <objects>
+                <viewController storyboardIdentifier="newsBody" title="NewsBody" id="h14-VN-6dJ" userLabel="Новость" customClass="NewsBodyViewController" customModule="SportArena" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IHu-Xt-vfp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="BT9-4o-Amb" userLabel="ScrollView">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="CYr-mD-sVy" userLabel="Content View">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="298.5"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xaI-jc-fLp" userLabel="imageNews">
+                                                <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="200" id="dfi-37-a1H"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="45S-sl-ohl" userLabel="titleNews">
+                                                <rect key="frame" x="10" y="210" width="300" height="19.5"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text=" " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aaK-3D-uii" userLabel="subtitleNews">
+                                                <rect key="frame" x="10" y="239.5" width="300" height="19.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uoK-Dh-t1i" userLabel="newsText">
+                                                <rect key="frame" x="10" y="269" width="300" height="19.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="uoK-Dh-t1i" firstAttribute="top" secondItem="aaK-3D-uii" secondAttribute="bottom" constant="10" id="4PJ-JY-KM7"/>
+                                            <constraint firstItem="45S-sl-ohl" firstAttribute="top" secondItem="xaI-jc-fLp" secondAttribute="bottom" constant="10" id="6Yo-z9-M6U"/>
+                                            <constraint firstAttribute="trailing" secondItem="aaK-3D-uii" secondAttribute="trailing" constant="10" id="D1d-kY-iSK"/>
+                                            <constraint firstAttribute="trailing" secondItem="xaI-jc-fLp" secondAttribute="trailing" id="RAE-Cm-TU1"/>
+                                            <constraint firstAttribute="trailing" secondItem="uoK-Dh-t1i" secondAttribute="trailing" constant="10" id="TJ8-Md-c3f"/>
+                                            <constraint firstItem="aaK-3D-uii" firstAttribute="top" secondItem="45S-sl-ohl" secondAttribute="bottom" constant="10" id="f2w-hF-G4E"/>
+                                            <constraint firstItem="45S-sl-ohl" firstAttribute="leading" secondItem="CYr-mD-sVy" secondAttribute="leading" constant="10" id="hbB-Wc-6GD"/>
+                                            <constraint firstItem="uoK-Dh-t1i" firstAttribute="leading" secondItem="CYr-mD-sVy" secondAttribute="leading" constant="10" id="kkf-Xv-w8n"/>
+                                            <constraint firstAttribute="trailing" secondItem="45S-sl-ohl" secondAttribute="trailing" constant="10" id="mBo-a8-bi5"/>
+                                            <constraint firstItem="xaI-jc-fLp" firstAttribute="top" secondItem="CYr-mD-sVy" secondAttribute="top" id="mKt-g6-Duk"/>
+                                            <constraint firstAttribute="bottom" secondItem="uoK-Dh-t1i" secondAttribute="bottom" constant="10" id="oiv-Fd-GAY"/>
+                                            <constraint firstItem="xaI-jc-fLp" firstAttribute="leading" secondItem="CYr-mD-sVy" secondAttribute="leading" id="pn5-zV-she"/>
+                                            <constraint firstItem="aaK-3D-uii" firstAttribute="leading" secondItem="CYr-mD-sVy" secondAttribute="leading" constant="10" id="wge-qf-CZU"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="CYr-mD-sVy" firstAttribute="top" secondItem="BT9-4o-Amb" secondAttribute="top" id="D9V-87-n2I"/>
+                                    <constraint firstAttribute="bottom" secondItem="CYr-mD-sVy" secondAttribute="bottom" id="Tgn-0f-DWv"/>
+                                    <constraint firstAttribute="trailing" secondItem="CYr-mD-sVy" secondAttribute="trailing" id="UK9-yJ-N0r"/>
+                                    <constraint firstItem="CYr-mD-sVy" firstAttribute="width" secondItem="BT9-4o-Amb" secondAttribute="width" id="eOy-5C-uiE"/>
+                                    <constraint firstItem="CYr-mD-sVy" firstAttribute="leading" secondItem="BT9-4o-Amb" secondAttribute="leading" id="jN0-JN-qSH"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="BT9-4o-Amb" firstAttribute="top" secondItem="hI8-n2-gzW" secondAttribute="top" id="7ut-dO-Uh4"/>
+                            <constraint firstItem="BT9-4o-Amb" firstAttribute="trailing" secondItem="hI8-n2-gzW" secondAttribute="trailing" id="H5x-Rz-7TJ"/>
+                            <constraint firstItem="BT9-4o-Amb" firstAttribute="leading" secondItem="hI8-n2-gzW" secondAttribute="leading" id="XRI-Ve-K6g"/>
+                            <constraint firstItem="BT9-4o-Amb" firstAttribute="bottom" secondItem="hI8-n2-gzW" secondAttribute="bottom" id="dYm-cg-OWu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hI8-n2-gzW"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Новость" id="Td3-dq-wmb"/>
+                    <size key="freeformSize" width="320" height="568"/>
+                    <connections>
+                        <outlet property="imageNews" destination="xaI-jc-fLp" id="7ST-Nb-RS6"/>
+                        <outlet property="newsText" destination="uoK-Dh-t1i" id="km3-Km-ZS3"/>
+                        <outlet property="subtitleNews" destination="aaK-3D-uii" id="XcF-Cj-09M"/>
+                        <outlet property="titleNews" destination="45S-sl-ohl" id="woM-Af-V3w"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H99-KN-8Re" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3293" y="0.0"/>
+        </scene>
+    </scenes>
+</document>

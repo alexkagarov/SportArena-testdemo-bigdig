@@ -84,7 +84,7 @@ class AllNewsViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "newsbodysegue") {
+        if (segue.identifier == "NewsPageSegue") {
             let NewsBodyController = segue.destination as! NewsBodyViewController
             NewsBodyController.title_news = title_segue
             NewsBodyController.id_news = id_segue
@@ -102,7 +102,7 @@ extension AllNewsViewController: UITableViewDataSource {
         title_segue = (self.newsFeed?[indexPath.item].headline)!
         id_segue = (self.newsFeed?[indexPath.item].id)!
         //print(("tableView: "+(self.news?[indexPath.item].headline)!))
-        performSegue(withIdentifier: "newsbodysegue", sender: self)
+        performSegue(withIdentifier: "NewsPageSegue", sender: self)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

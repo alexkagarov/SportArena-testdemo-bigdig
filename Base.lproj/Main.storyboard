@@ -144,7 +144,7 @@
                     <navigationItem key="navigationItem" id="W5r-Fv-BeC"/>
                     <connections>
                         <outlet property="mainPageTableView" destination="Gy3-VH-t16" id="Pk4-a9-fVu"/>
-                        <segue destination="fhd-Mc-tvE" kind="show" identifier="fv2newsbody" id="v8a-sj-WPo"/>
+                        <segue destination="zlH-Sz-zXR" kind="show" identifier="NewsPageSegue" id="Dva-5x-HJ8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZZR-0U-UTr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -226,255 +226,30 @@
                     <navigationItem key="navigationItem" id="IN3-h8-RbS"/>
                     <connections>
                         <outlet property="tableview" destination="g7y-Ge-2Yy" id="WeU-Ya-u2B"/>
-                        <segue destination="fhd-Mc-tvE" kind="show" identifier="newsbodysegue" id="lZ3-J0-Q1k"/>
+                        <segue destination="zlH-Sz-zXR" kind="show" identifier="NewsPageSegue" id="VX3-gm-wde"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2254" y="0.0"/>
         </scene>
-        <!--Новость-->
-        <scene sceneID="AIw-bK-QQl">
+        <!--Storyboard Reference-->
+        <scene sceneID="FKv-pG-fkY">
             <objects>
-                <viewController storyboardIdentifier="newsBody" title="NewsBody" id="fhd-Mc-tvE" userLabel="Новость" customClass="NewsBodyViewController" customModule="SportArena" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="JUY-Zb-kY8">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="dgr-mc-lVz" userLabel="ScrollView">
-                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="ouN-4V-dOu" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="298.5"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Dxi-72-yQG" userLabel="imageNews">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="200" id="t3C-Xz-N71"/>
-                                                </constraints>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title news" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xnq-E1-HlO" userLabel="titleNews">
-                                                <rect key="frame" x="10" y="210" width="300" height="19.5"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="subtitle news" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S6U-aa-YQf" userLabel="subtitleNews">
-                                                <rect key="frame" x="10" y="239.5" width="300" height="19.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6cy-c6-GGi" userLabel="newsText">
-                                                <rect key="frame" x="10" y="269" width="300" height="19.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstItem="Dxi-72-yQG" firstAttribute="leading" secondItem="ouN-4V-dOu" secondAttribute="leading" id="5OD-ys-CNi"/>
-                                            <constraint firstAttribute="bottom" secondItem="6cy-c6-GGi" secondAttribute="bottom" constant="10" id="81m-Mt-uTS"/>
-                                            <constraint firstItem="Dxi-72-yQG" firstAttribute="top" secondItem="ouN-4V-dOu" secondAttribute="top" id="8d1-VJ-DXB"/>
-                                            <constraint firstAttribute="trailing" secondItem="Dxi-72-yQG" secondAttribute="trailing" id="9QR-wu-CKi"/>
-                                            <constraint firstItem="6cy-c6-GGi" firstAttribute="leading" secondItem="ouN-4V-dOu" secondAttribute="leading" constant="10" id="AtO-5d-fxz"/>
-                                            <constraint firstItem="xnq-E1-HlO" firstAttribute="leading" secondItem="ouN-4V-dOu" secondAttribute="leading" constant="10" id="M4y-ey-RUv"/>
-                                            <constraint firstItem="S6U-aa-YQf" firstAttribute="leading" secondItem="ouN-4V-dOu" secondAttribute="leading" constant="10" id="Tbc-x6-J7z"/>
-                                            <constraint firstItem="S6U-aa-YQf" firstAttribute="top" secondItem="xnq-E1-HlO" secondAttribute="bottom" constant="10" id="WUH-QL-yej"/>
-                                            <constraint firstAttribute="trailing" secondItem="S6U-aa-YQf" secondAttribute="trailing" constant="10" id="dvv-ho-b7J"/>
-                                            <constraint firstItem="6cy-c6-GGi" firstAttribute="top" secondItem="S6U-aa-YQf" secondAttribute="bottom" constant="10" id="lB3-xD-kCm"/>
-                                            <constraint firstAttribute="trailing" secondItem="6cy-c6-GGi" secondAttribute="trailing" constant="10" id="x6b-Xg-NMz"/>
-                                            <constraint firstItem="xnq-E1-HlO" firstAttribute="top" secondItem="Dxi-72-yQG" secondAttribute="bottom" constant="10" id="xeY-iu-pnP"/>
-                                            <constraint firstAttribute="trailing" secondItem="xnq-E1-HlO" secondAttribute="trailing" constant="10" id="z5t-8m-bgs"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="ouN-4V-dOu" secondAttribute="trailing" id="UmB-5f-7W9"/>
-                                    <constraint firstItem="ouN-4V-dOu" firstAttribute="leading" secondItem="dgr-mc-lVz" secondAttribute="leading" id="bOB-7o-o4H"/>
-                                    <constraint firstItem="ouN-4V-dOu" firstAttribute="top" secondItem="dgr-mc-lVz" secondAttribute="top" id="gj4-ef-ssY"/>
-                                    <constraint firstItem="ouN-4V-dOu" firstAttribute="width" secondItem="dgr-mc-lVz" secondAttribute="width" id="pBr-Uy-us9"/>
-                                    <constraint firstAttribute="bottom" secondItem="ouN-4V-dOu" secondAttribute="bottom" id="zvb-Mz-PPu"/>
-                                </constraints>
-                            </scrollView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="dgr-mc-lVz" firstAttribute="top" secondItem="MY4-Xl-8VQ" secondAttribute="top" id="EQX-sY-PXk"/>
-                            <constraint firstItem="dgr-mc-lVz" firstAttribute="bottom" secondItem="MY4-Xl-8VQ" secondAttribute="bottom" id="UyR-w5-K1a"/>
-                            <constraint firstItem="dgr-mc-lVz" firstAttribute="trailing" secondItem="MY4-Xl-8VQ" secondAttribute="trailing" id="hT5-J4-hkv"/>
-                            <constraint firstItem="dgr-mc-lVz" firstAttribute="leading" secondItem="MY4-Xl-8VQ" secondAttribute="leading" id="x6o-4t-XLr"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="MY4-Xl-8VQ"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Новость" id="e77-lp-aO3"/>
-                    <size key="freeformSize" width="320" height="568"/>
-                    <connections>
-                        <outlet property="imageNews" destination="Dxi-72-yQG" id="gvX-YZ-D38"/>
-                        <outlet property="newsText" destination="6cy-c6-GGi" id="UIG-hg-SMc"/>
-                        <outlet property="subtitleNews" destination="S6U-aa-YQf" id="fe2-iu-eZV"/>
-                        <outlet property="titleNews" destination="xnq-E1-HlO" id="Eao-Uj-cmM"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6Ld-aO-QV2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder id="zlH-Sz-zXR" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Aox-XV-zVc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3293" y="0.0"/>
+            <point key="canvasLocation" x="3083" y="-326"/>
         </scene>
-        <!--Видео-->
-        <scene sceneID="R8H-2t-xbA">
+        <!--VideoSection-->
+        <scene sceneID="pQb-CE-4Sq">
             <objects>
-                <viewController id="05B-F9-qfm" userLabel="Видео" customClass="VideosViewController" customModule="SportArena" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="nzF-xE-Ral">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="110" estimatedRowHeight="-1" sectionHeaderHeight="-1" sectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="CfG-5b-HAM" userLabel="videoTableView">
-                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="videoCell" rowHeight="110" id="Byt-Ta-ltk" userLabel="videoCell" customClass="VideoNewsCell" customModule="SportArena">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="110"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Byt-Ta-ltk" id="acH-zB-n5U">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="109.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="gXe-KY-Cbs">
-                                                    <rect key="frame" x="15" y="11" width="290" height="88"/>
-                                                    <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="default_img" translatesAutoresizingMaskIntoConstraints="NO" id="J3j-HB-uHr" userLabel="imageVideo">
-                                                            <rect key="frame" x="0.0" y="0.0" width="87" height="88"/>
-                                                        </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="video title news" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9H0-MB-lgl" userLabel="titleVideo">
-                                                            <rect key="frame" x="101" y="0.0" width="189" height="88"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
-                                                    <constraints>
-                                                        <constraint firstItem="J3j-HB-uHr" firstAttribute="width" secondItem="gXe-KY-Cbs" secondAttribute="width" multiplier="0.3" id="8F2-og-Fxf"/>
-                                                    </constraints>
-                                                </stackView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="gXe-KY-Cbs" firstAttribute="top" secondItem="acH-zB-n5U" secondAttribute="topMargin" id="QuX-X3-0ic"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="gXe-KY-Cbs" secondAttribute="bottom" id="Vg3-hJ-aMc"/>
-                                                <constraint firstItem="gXe-KY-Cbs" firstAttribute="leading" secondItem="acH-zB-n5U" secondAttribute="leadingMargin" id="bdE-fQ-WqU"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="gXe-KY-Cbs" secondAttribute="trailing" id="qGX-31-EPw"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="imgVideo" destination="J3j-HB-uHr" id="X3b-3P-Iy3"/>
-                                            <outlet property="titleVideo" destination="9H0-MB-lgl" id="FWz-ZF-k7S"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="05B-F9-qfm" id="66g-rI-rAa"/>
-                                    <outlet property="delegate" destination="05B-F9-qfm" id="0vV-Vv-GsJ"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="CfG-5b-HAM" firstAttribute="bottom" secondItem="gD8-cE-4Eb" secondAttribute="bottom" id="7IL-d1-ORF"/>
-                            <constraint firstItem="CfG-5b-HAM" firstAttribute="trailing" secondItem="gD8-cE-4Eb" secondAttribute="trailing" id="MzN-AW-JAU"/>
-                            <constraint firstItem="CfG-5b-HAM" firstAttribute="leading" secondItem="gD8-cE-4Eb" secondAttribute="leading" id="NIm-M9-XJu"/>
-                            <constraint firstItem="CfG-5b-HAM" firstAttribute="top" secondItem="gD8-cE-4Eb" secondAttribute="top" id="cga-RA-lGQ"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="gD8-cE-4Eb"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="dhI-vB-1Gp"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="videoTableview" destination="CfG-5b-HAM" id="IQS-Z1-3TM"/>
-                        <segue destination="kej-28-vOU" kind="show" identifier="videoNews" id="ZQD-TP-mwp"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iRq-jw-Rwk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="VideoSection" id="bWx-1z-bf2" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="e9v-G9-eqw"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9M2-fd-J88" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2254" y="904"/>
-        </scene>
-        <!--Video News Body View Controller-->
-        <scene sceneID="f80-fn-TQj">
-            <objects>
-                <viewController id="kej-28-vOU" customClass="VideoNewsBodyViewController" customModule="SportArena" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="tug-1j-0cZ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="XI7-kE-Ufa" userLabel="ScrollView">
-                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="qLj-R0-fh9" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
-                                        <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="O9A-Od-VhA" userLabel="imageNews">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="200" id="2z1-Yo-yUE"/>
-                                                </constraints>
-                                            </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title news" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aG6-Il-S5c" userLabel="titleNews">
-                                                <rect key="frame" x="10" y="210" width="300" height="19.5"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yDn-Ne-3Mx" userLabel="webContentView">
-                                                <rect key="frame" x="10" y="239.5" width="300" height="215.5"/>
-                                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <wkWebViewConfiguration key="configuration">
-                                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" audio="YES" video="YES"/>
-                                                    <wkPreferences key="preferences"/>
-                                                </wkWebViewConfiguration>
-                                            </wkWebView>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstItem="O9A-Od-VhA" firstAttribute="leading" secondItem="qLj-R0-fh9" secondAttribute="leading" id="4Eb-cn-zPE"/>
-                                            <constraint firstAttribute="bottom" secondItem="yDn-Ne-3Mx" secondAttribute="bottom" id="IMO-13-QbD"/>
-                                            <constraint firstAttribute="trailing" secondItem="O9A-Od-VhA" secondAttribute="trailing" id="KMa-Jz-GuC"/>
-                                            <constraint firstItem="aG6-Il-S5c" firstAttribute="leading" secondItem="qLj-R0-fh9" secondAttribute="leading" constant="10" id="SWW-cK-Wum"/>
-                                            <constraint firstItem="aG6-Il-S5c" firstAttribute="top" secondItem="O9A-Od-VhA" secondAttribute="bottom" constant="10" id="jn3-ii-wBU"/>
-                                            <constraint firstItem="yDn-Ne-3Mx" firstAttribute="top" secondItem="aG6-Il-S5c" secondAttribute="bottom" constant="10" id="jpe-vM-v0v"/>
-                                            <constraint firstItem="O9A-Od-VhA" firstAttribute="top" secondItem="qLj-R0-fh9" secondAttribute="top" id="pK2-M8-Cmw"/>
-                                            <constraint firstItem="yDn-Ne-3Mx" firstAttribute="leading" secondItem="qLj-R0-fh9" secondAttribute="leading" constant="10" id="rvH-ed-SNS"/>
-                                            <constraint firstAttribute="trailing" secondItem="aG6-Il-S5c" secondAttribute="trailing" constant="10" id="tlp-Tj-45W"/>
-                                            <constraint firstAttribute="trailing" secondItem="yDn-Ne-3Mx" secondAttribute="trailing" constant="10" id="wTc-o9-UKj"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="qLj-R0-fh9" firstAttribute="top" secondItem="XI7-kE-Ufa" secondAttribute="top" id="Xaq-Sa-btG"/>
-                                    <constraint firstItem="qLj-R0-fh9" firstAttribute="width" secondItem="XI7-kE-Ufa" secondAttribute="width" id="dn1-VL-jEx"/>
-                                    <constraint firstItem="qLj-R0-fh9" firstAttribute="centerY" secondItem="XI7-kE-Ufa" secondAttribute="centerY" id="dvI-pJ-yIr"/>
-                                    <constraint firstItem="qLj-R0-fh9" firstAttribute="leading" secondItem="XI7-kE-Ufa" secondAttribute="leading" id="h4I-bj-3Dj"/>
-                                    <constraint firstAttribute="trailing" secondItem="qLj-R0-fh9" secondAttribute="trailing" id="sxp-pw-W9K"/>
-                                    <constraint firstAttribute="bottom" secondItem="qLj-R0-fh9" secondAttribute="bottom" id="xm0-Ac-4Mq"/>
-                                </constraints>
-                            </scrollView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="XI7-kE-Ufa" firstAttribute="top" secondItem="WOs-7L-dul" secondAttribute="top" id="MgN-0d-Sfa"/>
-                            <constraint firstItem="WOs-7L-dul" firstAttribute="bottom" secondItem="XI7-kE-Ufa" secondAttribute="bottom" id="PKN-gm-gZx"/>
-                            <constraint firstItem="XI7-kE-Ufa" firstAttribute="trailing" secondItem="WOs-7L-dul" secondAttribute="trailing" id="YqZ-lw-KZa"/>
-                            <constraint firstItem="XI7-kE-Ufa" firstAttribute="leading" secondItem="WOs-7L-dul" secondAttribute="leading" id="lge-AK-mYC"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="WOs-7L-dul"/>
-                    </view>
-                    <connections>
-                        <outlet property="videoContent" destination="yDn-Ne-3Mx" id="6mN-UL-Ypt"/>
-                        <outlet property="videoImage" destination="O9A-Od-VhA" id="FEr-Iu-Lr4"/>
-                        <outlet property="videoNewsTopic" destination="aG6-Il-S5c" id="Mld-mI-sGE"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5YF-jh-rgM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3293" y="904"/>
+            <point key="canvasLocation" x="2060" y="904"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -499,7 +274,7 @@
         <scene sceneID="Yte-ge-96Q">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dMt-Fd-cdf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Новости" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Новости" image="second" selectedImage="second" id="cPa-gy-q4n"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vBR-cP-uoP">
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
@@ -518,7 +293,7 @@
         <scene sceneID="TQt-Fv-Iju">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KH5-yD-uR6" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Видео" image="second" id="BDE-2G-wbR"/>
+                    <tabBarItem key="tabBarItem" title="Видео" image="second" selectedImage="first" id="BDE-2G-wbR"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="kc8-4d-Bk1">
                         <rect key="frame" x="0.0" y="20" width="320" height="44"/>
@@ -526,7 +301,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="05B-F9-qfm" kind="relationship" relationship="rootViewController" id="tYq-v5-yvD"/>
+                        <segue destination="bWx-1z-bf2" kind="relationship" relationship="rootViewController" id="2j3-C8-cFB"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ne3-B9-Fep" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -535,11 +310,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="default_img" width="971" height="1024"/>
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="lZ3-J0-Q1k"/>
+        <segue reference="VX3-gm-wde"/>
     </inferredMetricsTieBreakers>
 </document>

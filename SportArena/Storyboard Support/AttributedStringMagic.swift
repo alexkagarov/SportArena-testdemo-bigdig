@@ -105,7 +105,7 @@ extension String {
                 "html *" +
                 "{" +
                 "font-size: 16pt !important;" +
-                "color: #000000) !important;" +
+                "color: #000000 !important;" +
                 "font-family: Helvetica !important;" +
             "}</style> \(self)"
             
@@ -155,3 +155,4 @@ extension UIImage {
         return newImage!
     }
 }
+
