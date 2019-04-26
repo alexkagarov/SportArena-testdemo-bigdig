@@ -3,6 +3,7 @@
 
 import UIKit
 import Foundation
+import SwiftSoup
 
 extension UIColor {
     var hexString:String? {
@@ -155,4 +156,3 @@ extension UIImage {
         return newImage!
     }
 }
-

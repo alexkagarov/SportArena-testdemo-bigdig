@@ -233,10 +233,10 @@
             </objects>
             <point key="canvasLocation" x="2254" y="0.0"/>
         </scene>
-        <!--Storyboard Reference-->
+        <!--NewsSinglePage-->
         <scene sceneID="FKv-pG-fkY">
             <objects>
-                <viewControllerPlaceholder id="zlH-Sz-zXR" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="NewsSinglePage" id="zlH-Sz-zXR" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Aox-XV-zVc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3083" y="-326"/>

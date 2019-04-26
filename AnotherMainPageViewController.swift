@@ -26,7 +26,7 @@ class AnotherMainPageViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "fv2newsbody") {
+        if (segue.identifier == "NewsPageSegue") {
             let NewsBodyController = segue.destination as! NewsBodyViewController
             NewsBodyController.title_news = title_segue
             print (id_segue)
@@ -120,12 +120,12 @@ extension AnotherMainPageViewController: UITableViewDelegate {
             title_segue = (self.topNewsArray?[indexPath.item].headline)!
             id_segue = (self.topNewsArray?[indexPath.item].id)!
             //print(("tableView: "+(self.news?[indexPath.item].headline)!))
-            performSegue(withIdentifier: "fv2newsbody", sender: self)
+            performSegue(withIdentifier: "NewsPageSegue", sender: self)
         case 2:
             title_segue = (self.mainNewsArray?[indexPath.item].headline)!
             id_segue = (self.mainNewsArray?[indexPath.item].id)!
             //print(("tableView: "+(self.news?[indexPath.item].headline)!))
-            performSegue(withIdentifier: "fv2newsbody", sender: self)
+            performSegue(withIdentifier: "NewsPageSegue", sender: self)
         default:
             break
         }

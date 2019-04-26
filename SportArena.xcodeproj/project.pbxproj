@@ -21,7 +21,6 @@
 		5F510A01372A9988C309B632 /* Pods_SportArena.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D65C6ECD814B99BED8DC16B3 /* Pods_SportArena.framework */; };
 		9524FEB82134585400042543 /* TimeEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9524FEB72134585400042543 /* TimeEditor.swift */; };
 		9557923D211B5015003CA688 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9557923C211B5015003CA688 /* AppDelegate.swift */; };
-		9557923F211B5015003CA688 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9557923E211B5015003CA688 /* MainPageViewController.swift */; };
 		95579241211B5015003CA688 /* AllNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95579240211B5015003CA688 /* AllNewsViewController.swift */; };
 		95579244211B5015003CA688 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95579242211B5015003CA688 /* Main.storyboard */; };
 		95579246211B5018003CA688 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95579245211B5018003CA688 /* Assets.xcassets */; };
@@ -61,7 +60,6 @@
 		9524FEB72134585400042543 /* TimeEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeEditor.swift; sourceTree = "<group>"; };
 		95579239211B5015003CA688 /* SportArena.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SportArena.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9557923C211B5015003CA688 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9557923E211B5015003CA688 /* MainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
 		95579240211B5015003CA688 /* AllNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllNewsViewController.swift; sourceTree = "<group>"; };
 		95579243211B5015003CA688 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		95579245211B5018003CA688 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -105,7 +103,6 @@
 				5F2A44002273068F00ED1AD5 /* VideoNewsBodyViewController.swift */,
 				5F18D2E222722405009E6BED /* MatchBodyViewController.swift */,
 				5F18D2E022722275009E6BED /* MatchCentreViewController.swift */,
-				9557923E211B5015003CA688 /* MainPageViewController.swift */,
 				5F18D2DC22712E1D009E6BED /* AnotherMainPageViewController.swift */,
 				95579240211B5015003CA688 /* AllNewsViewController.swift */,
 				95AB0BD9211B64C2008956A0 /* VideosViewController.swift */,
@@ -370,7 +367,6 @@
 				95BA79D6213812B9001084DC /* VideoNews.swift in Sources */,
 				95AB0BDA211B64C2008956A0 /* VideosViewController.swift in Sources */,
 				95BA79D821382516001084DC /* ImageDisplay.swift in Sources */,
-				9557923F211B5015003CA688 /* MainPageViewController.swift in Sources */,
 				9524FEB82134585400042543 /* TimeEditor.swift in Sources */,
 				959DEE85211D678600330682 /* TopNewsCell.swift in Sources */,
 				5F18D2DF227144C9009E6BED /* DividerTableViewCell.swift in Sources */,

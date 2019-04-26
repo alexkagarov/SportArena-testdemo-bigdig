@@ -121,13 +121,13 @@ extension MainPageViewController: UITableViewDelegate {
             title_segue = (self.topnews?[indexPath.item].headline)!
             id_segue = (self.topnews?[indexPath.item].id)!
             //print(("tableView: "+(self.news?[indexPath.item].headline)!))
-            performSegue(withIdentifier: "fv2newsbody", sender: self)
+            performSegue(withIdentifier: "NewsPageSegue", sender: self)
         }
         if tableView == self.tableMainNews {
             title_segue = (self.mainnews?[indexPath.item].headline)!
             id_segue = (self.mainnews?[indexPath.item].id)!
             //print(("tableView: "+(self.news?[indexPath.item].headline)!))
-            performSegue(withIdentifier: "fv2newsbody", sender: self)
+            performSegue(withIdentifier: "NewsPageSegue", sender: self)
         }
     }
 }
