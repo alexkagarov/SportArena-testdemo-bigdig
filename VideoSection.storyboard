@@ -32,7 +32,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="PML-M6-ZK1">
                                                     <rect key="frame" x="15" y="11" width="345" height="88"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="default_img" translatesAutoresizingMaskIntoConstraints="NO" id="afC-QW-QKy" userLabel="imageVideo">
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afC-QW-QKy" userLabel="imageVideo">
                                                             <rect key="frame" x="0.0" y="0.0" width="103.5" height="88"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="video title news" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vut-ys-CHN" userLabel="titleVideo">
@@ -166,7 +166,4 @@
             <point key="canvasLocation" x="3293" y="904"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="default_img" width="971" height="1024"/>
-    </resources>
 </document>

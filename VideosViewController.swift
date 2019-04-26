@@ -86,10 +86,12 @@ extension VideosViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "videoCell", for: indexPath) as! VideoNewsCell
-        let resource = ImageResource(downloadURL: URL(string: (self.videonews?[indexPath.item].image!)!)!, cacheKey: self.videonews?[indexPath.item].image!)
+        //let resource = ImageResource(downloadURL: URL(string: (self.videonews?[indexPath.item].image!)!)!, cacheKey: self.videonews?[indexPath.item].image!)
         
-        cell.imageView!.image = nil
-        cell.imageView!.kf.setImage(with: resource)
+        cell.imageView!.downloadImage(from: ((self.videonews?[indexPath.item].image)!))
+        
+        //cell.imageView!.image = nil
+        //cell.imageView!.kf.setImage(with: resource)
         cell.titleVideo.text = self.videonews?[indexPath.item].headline
         return cell
         
