@@ -1,17 +1,16 @@
 //
-//  TopNewsCell.swift
+//  DividerTableViewCell.swift
 //  SportArena
 //
-//  Created by Yevgen Blazhko on 8/10/18.
-//  Copyright © 2018 Yevgen Blazhko. All rights reserved.
+//  Created by Alex Kagarov on 4/25/19.
+//  Copyright © 2019 Yevgen Blazhko. All rights reserved.
 //
 
 import UIKit
 
-class TopNewsCell: UITableViewCell {
-
-    @IBOutlet weak var imgTN: UIImageView!
-    @IBOutlet weak var titleTN: UILabel!
+class DividerTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var divider: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

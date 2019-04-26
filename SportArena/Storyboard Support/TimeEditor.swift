@@ -2,15 +2,13 @@
 //  Time_editor.swift
 //  SportArena
 //
-//  Created by Yevgen Blazhko on 8/27/18.
-//  Copyright © 2018 Yevgen Blazhko. All rights reserved.
 //
 
 import UIKit
 
-class Time_editor: NSObject {
+class TimeEditor: NSObject {
     
-    func timetime(from time: String) -> String {
+    func timeTime(from time: String) -> String {
         //let string = "2017-07-11T06:52:15"
         let dateFormatter = DateFormatter()
         let tempLocale = dateFormatter.locale // save locale temporarily

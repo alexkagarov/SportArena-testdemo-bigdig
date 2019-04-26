@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Табло-->
+        <scene sceneID="sHL-9S-nf6">
+            <objects>
+                <navigationController id="ggO-N9-7j4" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Табло" id="OLR-tN-mcH"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BPj-EQ-87n">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="HJM-RC-G9Z" kind="relationship" relationship="rootViewController" id="Zkf-we-kY9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MOK-LP-B1R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3099" y="-1953"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="AFj-Hn-I3Q">
+            <objects>
+                <viewController id="HJM-RC-G9Z" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xmC-r3-KQh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="T7X-Gq-1qO">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="2ca-lz-biU">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2ca-lz-biU" id="Ldg-xX-ddK">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="52" translatesAutoresizingMaskIntoConstraints="NO" id="i9E-yX-ag2">
+                                                    <rect key="frame" x="15" y="11" width="290" height="22"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Динамо" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ilc-ap-41T" userLabel="Team Uno">
+                                                            <rect key="frame" x="0.0" y="0.0" width="80" height="22"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5:0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Vm-CX-BO1" userLabel="Score">
+                                                            <rect key="frame" x="132" y="0.0" width="26.5" height="22"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Шахтер" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9hM-wo-ZRE" userLabel="Team Dos">
+                                                            <rect key="frame" x="210.5" y="0.0" width="79.5" height="22"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="0Vm-CX-BO1" firstAttribute="centerX" secondItem="i9E-yX-ag2" secondAttribute="centerX" id="0rp-9b-p0q"/>
+                                                        <constraint firstItem="0Vm-CX-BO1" firstAttribute="centerY" secondItem="i9E-yX-ag2" secondAttribute="centerY" id="LqE-Ik-A90"/>
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="i9E-yX-ag2" secondAttribute="trailing" id="J5x-8w-1mL"/>
+                                                <constraint firstItem="i9E-yX-ag2" firstAttribute="top" secondItem="Ldg-xX-ddK" secondAttribute="topMargin" id="T39-AN-ehA"/>
+                                                <constraint firstItem="i9E-yX-ag2" firstAttribute="leading" secondItem="Ldg-xX-ddK" secondAttribute="leadingMargin" id="fOU-Eu-RsS"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="i9E-yX-ag2" secondAttribute="bottom" id="xsR-Zx-1UZ"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ryh-2D-HFu" firstAttribute="bottom" secondItem="T7X-Gq-1qO" secondAttribute="bottom" id="9Y4-kJ-woS"/>
+                            <constraint firstItem="Ryh-2D-HFu" firstAttribute="trailing" secondItem="T7X-Gq-1qO" secondAttribute="trailing" id="VXV-SH-Y8E"/>
+                            <constraint firstItem="T7X-Gq-1qO" firstAttribute="leading" secondItem="Ryh-2D-HFu" secondAttribute="leading" id="WkX-e0-9sf"/>
+                            <constraint firstItem="T7X-Gq-1qO" firstAttribute="top" secondItem="Ryh-2D-HFu" secondAttribute="top" id="aD6-6R-xHT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Ryh-2D-HFu"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="GL0-zs-yCZ"/>
+                    <connections>
+                        <segue destination="DvO-rm-lZ5" kind="show" identifier="MatchView" id="ikh-Nw-iSd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="taG-H2-9so" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4039" y="-1953"/>
+        </scene>
+        <!--Match Body View Controller-->
+        <scene sceneID="cVd-Uh-ye2">
+            <objects>
+                <viewController id="DvO-rm-lZ5" customClass="MatchBodyViewController" customModule="SportArena" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yfh-eE-SLG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Ibr-XG-tjj"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rR6-ej-EPs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4935" y="-1953"/>
+        </scene>
+    </scenes>
+</document>

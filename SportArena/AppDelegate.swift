@@ -2,8 +2,6 @@
 //  AppDelegate.swift
 //  SportArena
 //
-//  Created by Yevgen Blazhko on 8/8/18.
-//  Copyright © 2018 Yevgen Blazhko. All rights reserved.
 //
 
 import UIKit
@@ -15,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
         return true
     }
