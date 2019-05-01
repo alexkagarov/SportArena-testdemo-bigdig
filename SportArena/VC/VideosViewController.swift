@@ -4,7 +4,6 @@
 //
 
 import UIKit
-import Kingfisher
 
 class VideosViewController: UIViewController {
     
@@ -91,7 +90,11 @@ extension VideosViewController: UITableViewDataSource {
         cell.imageView!.downloadImage(from: ((self.videonews?[indexPath.item].image)!))
         
         //cell.imageView!.image = nil
+        
+        /* NOTE: !!!Kingfisher CocoaPod for this method is removed from project!!!
         //cell.imageView!.kf.setImage(with: resource)
+         */
+        
         cell.titleVideo.text = self.videonews?[indexPath.item].headline
         return cell
         

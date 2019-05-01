@@ -59,22 +59,18 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (5.8.0):
     - GoogleUtilities/Logger
-  - Kingfisher (4.10.1)
   - nanopb (0.3.901):
     - nanopb/decode (= 0.3.901)
     - nanopb/encode (= 0.3.901)
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
   - Protobuf (3.7.0)
-  - SwiftSoup (2.0.0)
 
 DEPENDENCIES:
   - Crashlytics
   - Fabric
   - Firebase/Core
   - Firebase/Messaging
-  - Kingfisher (~> 4.0)
-  - SwiftSoup
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -88,10 +84,8 @@ SPEC REPOS:
     - FirebaseMessaging
     - GoogleAppMeasurement
     - GoogleUtilities
-    - Kingfisher
     - nanopb
     - Protobuf
-    - SwiftSoup
 
 SPEC CHECKSUMS:
   Crashlytics: 07fb167b1694128c1c9a5a5cc319b0e9c3ca0933
@@ -104,11 +98,9 @@ SPEC CHECKSUMS:
   FirebaseMessaging: 4235f949ce1c4e827aeb19705ba5c53f9b85aa10
   GoogleAppMeasurement: ffe513e90551844a739e7bcbb1d2aca1c28a4338
   GoogleUtilities: 04fce34bcd5620c1ee76fb79172105c74a4df335
-  Kingfisher: c148cd7b47ebde9989f6bc7c27dcaa79d81279a0
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Protobuf: 7a877b7f3e5964e3fce995e2eb323dbc6831bb5a
-  SwiftSoup: 4fe21f65cdbfa3a40559047016b7962b88d29279
 
-PODFILE CHECKSUM: b6ba26036e03c92af2d3e0ff4dad0580d3fdfbfb
+PODFILE CHECKSUM: b56e27c55321d31fe9e77154a7d8286128231873
 
 COCOAPODS: 1.6.1

@@ -3,10 +3,9 @@
 
 import UIKit
 import Foundation
-import SwiftSoup
 
 extension UIColor {
-    var hexString:String? {
+    var hexString: String? {
         if let components = self.cgColor.components {
             let r = components[0]
             let g = components[1]

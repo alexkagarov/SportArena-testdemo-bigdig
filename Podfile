@@ -14,8 +14,6 @@ target 'SportArena' do
   pod 'Fabric'
   pod 'Crashlytics'
   pod 'Firebase/Messaging'
-  pod 'Kingfisher', '~> 4.0'
-  pod 'SwiftSoup'
 
 
 end

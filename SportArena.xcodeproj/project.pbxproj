@@ -96,9 +96,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5F01A8FE226A23BF0095FDDB /* VC */ = {
+		5FB06B8522798D06006A5C32 /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				5FB06B8622798D33006A5C32 /* Cells */,
 				9570CF582129CA9C00B778F2 /* NewsBodyViewController.swift */,
 				5F2A44002273068F00ED1AD5 /* VideoNewsBodyViewController.swift */,
 				5F18D2E222722405009E6BED /* MatchBodyViewController.swift */,
@@ -106,13 +107,23 @@
 				5F18D2DC22712E1D009E6BED /* AnotherMainPageViewController.swift */,
 				95579240211B5015003CA688 /* AllNewsViewController.swift */,
 				95AB0BD9211B64C2008956A0 /* VideosViewController.swift */,
-				5F2A440422736BE500ED1AD5 /* Cells */,
 			);
-			name = VC;
-			path = ..;
+			path = VC;
 			sourceTree = "<group>";
 		};
-		5F01A8FF226A23DA0095FDDB /* Models */ = {
+		5FB06B8622798D33006A5C32 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5F18D2DE227144C9009E6BED /* DividerTableViewCell.swift */,
+				959DEE84211D678600330682 /* TopNewsCell.swift */,
+				9566FFFE212C9938003B3F83 /* MainNewsCell.swift */,
+				959DEE80211C3BA500330682 /* NewsFeedCell.swift */,
+				95BA79D321380EC4001084DC /* VideoNewsCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		5FB06B8722798D4C006A5C32 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				959DEE82211C44F300330682 /* NewsFeed.swift */,
@@ -120,11 +131,10 @@
 				9566FFFC212C7FBB003B3F83 /* MainNewsFeed.swift */,
 				95BA79D5213812B9001084DC /* VideoNews.swift */,
 			);
-			name = Models;
-			path = ..;
+			path = Models;
 			sourceTree = "<group>";
 		};
-		5F01A900226A243C0095FDDB /* Storyboards */ = {
+		5FB06B8822798D58006A5C32 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
 				95579247211B5018003CA688 /* LaunchScreen.storyboard */,
@@ -135,11 +145,10 @@
 				5F2A44092273752400ED1AD5 /* AllNewsSection.storyboard */,
 				5F2A440B2273760300ED1AD5 /* NewsSinglePage.storyboard */,
 			);
-			name = Storyboards;
-			path = ..;
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
-		5F2A43FD2272FEAF00ED1AD5 /* Storyboard Support */ = {
+		5FB06B8922798D63006A5C32 /* Storyboard Support */ = {
 			isa = PBXGroup;
 			children = (
 				958B815B213C051600AF0DD9 /* Html.swift */,
@@ -148,18 +157,6 @@
 				5F2A43FE2272FECE00ED1AD5 /* AttributedStringMagic.swift */,
 			);
 			path = "Storyboard Support";
-			sourceTree = "<group>";
-		};
-		5F2A440422736BE500ED1AD5 /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				5F18D2DE227144C9009E6BED /* DividerTableViewCell.swift */,
-				959DEE84211D678600330682 /* TopNewsCell.swift */,
-				9566FFFE212C9938003B3F83 /* MainNewsCell.swift */,
-				959DEE80211C3BA500330682 /* NewsFeedCell.swift */,
-				95BA79D321380EC4001084DC /* VideoNewsCell.swift */,
-			);
-			path = Cells;
 			sourceTree = "<group>";
 		};
 		95579230211B5015003CA688 = {
@@ -183,10 +180,10 @@
 		9557923B211B5015003CA688 /* SportArena */ = {
 			isa = PBXGroup;
 			children = (
-				5F2A43FD2272FEAF00ED1AD5 /* Storyboard Support */,
-				5F01A900226A243C0095FDDB /* Storyboards */,
-				5F01A8FF226A23DA0095FDDB /* Models */,
-				5F01A8FE226A23BF0095FDDB /* VC */,
+				5FB06B8522798D06006A5C32 /* VC */,
+				5FB06B8722798D4C006A5C32 /* Models */,
+				5FB06B8822798D58006A5C32 /* Storyboards */,
+				5FB06B8922798D63006A5C32 /* Storyboard Support */,
 				9557924A211B5018003CA688 /* Info.plist */,
 				95579245211B5018003CA688 /* Assets.xcassets */,
 				9557923C211B5015003CA688 /* AppDelegate.swift */,
@@ -326,9 +323,7 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SportArena/Pods-SportArena-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftSoup/SwiftSoup.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -336,9 +331,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSoup.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
