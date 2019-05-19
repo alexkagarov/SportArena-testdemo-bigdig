@@ -10,11 +10,10 @@ class AllNewsViewController: UIViewController {
     
     var refresh: UIRefreshControl!
     
-    var titlenews = ""
-    var title_segue = ""
-    var id_segue = ""
-    var n = 1
-    
+    var newsTitle = ""
+    var segueTitle = ""
+    var segueID = ""
+    var n = 1 // temporary value for pagination
     
     @IBOutlet weak var tableview: UITableView!
     var newsFeed: [NewsFeed]? = []
@@ -22,13 +21,8 @@ class AllNewsViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidLoad()
         
-        //        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
-        //        imageView.contentMode = .scaleAspectFit
-        //        let image = UIImage(named: "arrow_up")
-        //        imageView.image = image
-        //        navigationItem.titleView = imageView
-        
         getJSON()
+        
         refresh = UIRefreshControl()
         refresh.attributedTitle = NSAttributedString(string: "Обновление")
         refresh.addTarget(self, action: #selector(AllNewsViewController.getJSON), for: UIControl.Event.valueChanged)
@@ -41,21 +35,18 @@ class AllNewsViewController: UIViewController {
     }
     
     @objc func getJSON(){
+        let allNewsUrl = "https://sportarena.com/wp-api/wp/v2/posts/?per_page=30&page=\(n)"
+        guard let request = URL(string: allNewsUrl) else { return }
         
-        let urlRequest = URLRequest(url: URL(string: "https://sportarena.com/wp-api/wp/v2/posts/?per_page=30&page=\(n)")!)
-        
-        let task = URLSession.shared.dataTask(with: urlRequest) { (data,response,error) in
+        let task = URLSession.shared.dataTask(with: request) { (data,response,error) in
             
-            if error != nil {
-                print(error as Any)
-                return
-            }
             self.newsFeed = [NewsFeed]()
+            
             do {
                 let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as! NSArray
                 
                 for arrayX in json as! [[String: Any]] {
-                    let NF = NewsFeed()
+                    var newsFeedInstance = NewsFeed()
                     
                     let categories0 = arrayX["categories"] as? NSArray
                     let title0 = arrayX["title"] as? [String: Any]
@@ -64,13 +55,13 @@ class AllNewsViewController: UIViewController {
                         let date = arrayX["date"],
                         let title = title0!["rendered"] as? String,
                         let categories = categories0?[0] {
-                        NF.headline = Html().convert(from: title)
-                        NF.topic = "\(categories)"
+                        newsFeedInstance.headline = Html().convert(from: title)
+                        newsFeedInstance.topic = "\(categories)"
                         //print (ID)
-                        NF.id = "\(ID)"
-                        NF.time = date as? String
+                        newsFeedInstance.id = "\(ID)"
+                        newsFeedInstance.time = date as? String
                     }
-                    self.newsFeed?.append(NF)
+                    self.newsFeed?.append(newsFeedInstance)
                 }
                 DispatchQueue.main.async {
                     self.refresh.endRefreshing()
@@ -85,9 +76,9 @@ class AllNewsViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "NewsPageSegue") {
-            let NewsBodyController = segue.destination as! NewsBodyViewController
-            NewsBodyController.title_news = title_segue
-            NewsBodyController.id_news = id_segue
+            guard let NewsBodyController = segue.destination as? NewsBodyViewController else { return }
+            NewsBodyController.newsTitle = segueTitle
+            NewsBodyController.newsID = segueID
         }
     }
     
@@ -99,8 +90,8 @@ class AllNewsViewController: UIViewController {
 
 extension AllNewsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        title_segue = (self.newsFeed?[indexPath.item].headline)!
-        id_segue = (self.newsFeed?[indexPath.item].id)!
+        segueTitle = (self.newsFeed?[indexPath.item].headline)!
+        segueID = (self.newsFeed?[indexPath.item].id)!
         //print(("tableView: "+(self.news?[indexPath.item].headline)!))
         performSegue(withIdentifier: "NewsPageSegue", sender: self)
     }

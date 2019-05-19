@@ -46,7 +46,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="249.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SOF-nb-WaC">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SOF-nb-WaC">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="200"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="200" id="hv5-wc-NiV"/>
@@ -314,6 +314,6 @@
         <image name="second" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="VX3-gm-wde"/>
+        <segue reference="Dva-5x-HJ8"/>
     </inferredMetricsTieBreakers>
 </document>

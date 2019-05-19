@@ -6,7 +6,7 @@
 
 import UIKit
 
-class VideoNews: NSObject {
+struct VideoNews: Decodable {
     var headline: String?
     var image: String?
     var id: String?

@@ -12,8 +12,8 @@ class AnotherMainPageViewController: UIViewController {
     var topNewsArray: [TopNews]? = []
     var mainNewsArray: [MainNewsFeed]? = []
     
-    var title_segue = ""
-    var id_segue = ""
+    var segueTitle = ""
+    var segueID = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,14 +28,15 @@ class AnotherMainPageViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "NewsPageSegue") {
             let NewsBodyController = segue.destination as! NewsBodyViewController
-            NewsBodyController.title_news = title_segue
-            print (id_segue)
-            NewsBodyController.id_news = id_segue
+            NewsBodyController.newsTitle = segueTitle
+            print (segueID)
+            NewsBodyController.newsID = segueID
         }
     }
     
     func TopNewsJSON () {
-        let urlRequest = URLRequest(url: URL(string: "https://sportarena.com/wp-api/topnews2018/top/")!)
+        let topNewsUrl = "https://sportarena.com/wp-api/topnews2018/top/"
+        guard let urlRequest = URL(string: topNewsUrl) else { return }
         
         let task = URLSession.shared.dataTask(with: urlRequest) { (data,response,error) in
             
@@ -48,18 +49,18 @@ class AnotherMainPageViewController: UIViewController {
             do {
                 let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as! [String : AnyObject]
                 
-                //print(json)
-                let TN = TopNews()
+                var topNewsInstance = TopNews()
+                
                 let jarray = json["top-news"] as! NSArray
                 let jarray1 = jarray[0] as? [String: AnyObject]
                 if let ID = jarray1!["ID"] as? String,
                     let title =  jarray1!["title"] as? String,
                     let img = jarray1!["img"] as? String {
-                    TN.headline = Html().convert(from: title)
-                    TN.image = img
-                    TN.id = "\(ID)"
+                    topNewsInstance.headline = Html().convert(from: title)
+                    topNewsInstance.image = img
+                    topNewsInstance.id = "\(ID)"
                 }
-                self.topNewsArray?.append(TN)
+                self.topNewsArray?.append(topNewsInstance)
                 
                 DispatchQueue.main.async {
                     self.mainPageTableView.reloadData()
@@ -73,15 +74,11 @@ class AnotherMainPageViewController: UIViewController {
     }
     
     func MainNewsJSON () {
-        let urlRequest = URLRequest(url: URL(string: "https://sportarena.com/wp-api/generalnews2018/general/num/10/")!)
+        let mainNewsUrl = "https://sportarena.com/wp-api/generalnews2018/general/num/10/"
+        guard let request = URL(string: mainNewsUrl) else { return }
         
-        let task = URLSession.shared.dataTask(with: urlRequest) { (data,response,error) in
+        let task = URLSession.shared.dataTask(with: request) { (data,response,error) in
             
-            if error != nil {
-                print(error as Any)
-                return
-            }
-            //self.mainnews = [MainNews]()
             do {
                 let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as! [String : AnyObject]
                 
@@ -89,15 +86,15 @@ class AnotherMainPageViewController: UIViewController {
                 let jarray1 = jarray[0]
                 
                 for jarray1 in jarray1 as! [[String: Any]] {
-                    let MNF = MainNewsFeed()
+                    var mainNewsFeedInstance = MainNewsFeed()
                     if let ID = jarray1["id"],
                         let title = jarray1["title"] as? String,
                         let time = jarray1["datetime"] {
-                        MNF.headline = Html().convert(from: title)
-                        MNF.id = "\(ID)"
-                        MNF.time = time as? String
+                        mainNewsFeedInstance.headline = Html().convert(from: title)
+                        mainNewsFeedInstance.id = "\(ID)"
+                        mainNewsFeedInstance.time = time as? String
                     }
-                    self.mainNewsArray?.append(MNF)
+                    self.mainNewsArray?.append(mainNewsFeedInstance)
                     
                     DispatchQueue.main.async {
                         self.mainPageTableView.reloadData()
@@ -117,13 +114,13 @@ extension AnotherMainPageViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.section {
         case 0:
-            title_segue = (self.topNewsArray?[indexPath.item].headline)!
-            id_segue = (self.topNewsArray?[indexPath.item].id)!
+            segueTitle = (self.topNewsArray?[indexPath.item].headline)!
+            segueID = (self.topNewsArray?[indexPath.item].id)!
             //print(("tableView: "+(self.news?[indexPath.item].headline)!))
             performSegue(withIdentifier: "NewsPageSegue", sender: self)
         case 2:
-            title_segue = (self.mainNewsArray?[indexPath.item].headline)!
-            id_segue = (self.mainNewsArray?[indexPath.item].id)!
+            segueTitle = (self.mainNewsArray?[indexPath.item].headline)!
+            segueID = (self.mainNewsArray?[indexPath.item].id)!
             //print(("tableView: "+(self.news?[indexPath.item].headline)!))
             performSegue(withIdentifier: "NewsPageSegue", sender: self)
         default:

@@ -13,16 +13,16 @@ class NewsBodyViewController: UIViewController {
     @IBOutlet weak var newsText: UILabel!
     @IBOutlet weak var subtitleNews: UILabel!
     
-    var title_news = ""
-    var id_news = ""
-    var categories_news = ""
-    var tags_news = ""
+    var newsTitle = ""
+    var newsID = ""
+    var newsCategory = ""
+    var newsTags = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        titleNews.text = title_news
-        getJSONnews(from: id_news)
+        titleNews.text = newsTitle
+        getJSONnews(from: newsID)
         
     }
     
@@ -31,16 +31,11 @@ class NewsBodyViewController: UIViewController {
     }
     
     func getJSONnews (from idfornews: String) {
+        let newsUrl = "https://sportarena.com/wp-api/wp/v2/posts/"+idfornews+"?_embed"
+        guard let request = URL(string: newsUrl) else { return }
+        print(request)
         
-        let urlRequest = URLRequest(url: URL(string: ("https://sportarena.com/wp-api/wp/v2/posts/")+idfornews+("?_embed"))!)
-        print(urlRequest)
-        
-        let task = URLSession.shared.dataTask(with: urlRequest) { (data,response,error) in
-            
-            if error != nil {
-                print(error as Any)
-                return
-            }
+        let task = URLSession.shared.dataTask(with: request) { (data,response,error) in
             do {
                 let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as! [String: AnyObject]
                 

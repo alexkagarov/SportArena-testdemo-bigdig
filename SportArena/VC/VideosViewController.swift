@@ -22,37 +22,32 @@ class VideosViewController: UIViewController {
         getJSON()
     }
     
-    @objc func getJSON(){
+    func getJSON(){
+        let newsUrl = "https://sportarena.com/wp-api/videoapp/page/1/num/20"
         
-        let urlRequest = URLRequest(url: URL(string: "https://sportarena.com/wp-api/videoapp/page/1/num/20")!)
+        guard let request = URL(string: newsUrl) else { return }
         
-        let task = URLSession.shared.dataTask(with: urlRequest) { (data,response,error) in
+        let task = URLSession.shared.dataTask(with: request) { (data,response,error) in
             
-            if error != nil {
-                print(error as Any)
-                return
-            }
             self.videonews = [VideoNews]()
             do {
                 let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as! NSArray
                 
                 for arrayX in json as! [[String: Any]] {
-                    let VN = VideoNews()
+                    var videoNewsInstance = VideoNews()
                     
                     if let ID = arrayX["id"],
                         let date = arrayX["datetime"],
                         let title = arrayX["title"],
                         let image_url = arrayX["img"] {
-                        VN.headline = Html().convert(from: title as! String)
-                        VN.image = image_url as? String
-                        VN.id = "\(ID)"
-                        VN.date = date as? String
-                        //VN.categories = "\(categories)"
-                        VN.categories = "76"
-                        //VN.tag = "\(tags)"
-                        VN.tag = "76"
+                        videoNewsInstance.headline = Html().convert(from: title as! String)
+                        videoNewsInstance.image = image_url as? String
+                        videoNewsInstance.id = "\(ID)"
+                        videoNewsInstance.date = date as? String
+                        videoNewsInstance.categories = "76"
+                        videoNewsInstance.tag = "76"
                     }
-                    self.videonews?.append(VN)
+                    self.videonews?.append(videoNewsInstance)
                 }
                 DispatchQueue.main.async {
                     self.videoTableview.reloadData()
@@ -72,10 +67,10 @@ class VideosViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "videoNews") {
             if let VideoNewsBodyViewController = segue.destination as? VideoNewsBodyViewController {
-                VideoNewsBodyViewController.title_news = title_segue
-                VideoNewsBodyViewController.id_news = id_segue
-                VideoNewsBodyViewController.categories_news = categories_segue
-                VideoNewsBodyViewController.tags_news = tags_segue
+                VideoNewsBodyViewController.newsTitle = title_segue
+                VideoNewsBodyViewController.newsID = id_segue
+                VideoNewsBodyViewController.newsCategory = categories_segue
+                VideoNewsBodyViewController.newsTags = tags_segue
             }
         }
     }

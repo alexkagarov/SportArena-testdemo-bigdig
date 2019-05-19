@@ -6,7 +6,7 @@
 
 import UIKit
 
-class NewsFeed: NSObject {
+struct NewsFeed: Decodable  {
     var headline: String?
     var time: String?
     var topic: String?
