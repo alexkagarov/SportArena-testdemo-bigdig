@@ -7,11 +7,11 @@ import UIKit
 
 class VideosViewController: UIViewController {
     
-    var n = 1
-    var title_segue = ""
-    var id_segue = ""
-    var categories_segue = ""
-    var tags_segue = ""
+    var n = 1 // temporary value for pagination
+    var segueTitle = ""
+    var segueID = ""
+    var segueCategories = ""
+    var segueTags = ""
     
     @IBOutlet weak var videoTableview: UITableView!
     
@@ -24,8 +24,8 @@ class VideosViewController: UIViewController {
     
     func getJSON(){
         let newsUrl = "https://sportarena.com/wp-api/videoapp/page/1/num/20"
-        
         guard let request = URL(string: newsUrl) else { return }
+        print(request)
         
         let task = URLSession.shared.dataTask(with: request) { (data,response,error) in
             
@@ -67,10 +67,10 @@ class VideosViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "videoNews") {
             if let VideoNewsBodyViewController = segue.destination as? VideoNewsBodyViewController {
-                VideoNewsBodyViewController.newsTitle = title_segue
-                VideoNewsBodyViewController.newsID = id_segue
-                VideoNewsBodyViewController.newsCategory = categories_segue
-                VideoNewsBodyViewController.newsTags = tags_segue
+                VideoNewsBodyViewController.newsTitle = segueTitle
+                VideoNewsBodyViewController.newsID = segueID
+                VideoNewsBodyViewController.newsCategory = segueCategories
+                VideoNewsBodyViewController.newsTags = segueTags
             }
         }
     }
@@ -106,10 +106,10 @@ extension VideosViewController: UITableViewDataSource {
 
 extension VideosViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        title_segue = (self.videonews?[indexPath.item].headline)!
-        id_segue = (self.videonews?[indexPath.item].id)!
-        categories_segue = (self.videonews?[indexPath.item].categories)!
-        tags_segue = (self.videonews?[indexPath.item].tag)!
+        segueTitle = (self.videonews?[indexPath.item].headline)!
+        segueID = (self.videonews?[indexPath.item].id)!
+        segueCategories = (self.videonews?[indexPath.item].categories)!
+        segueTags = (self.videonews?[indexPath.item].tag)!
         performSegue(withIdentifier: "videoNews", sender: self)
     }
 }

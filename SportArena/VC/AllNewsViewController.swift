@@ -37,6 +37,7 @@ class AllNewsViewController: UIViewController {
     @objc func getJSON(){
         let allNewsUrl = "https://sportarena.com/wp-api/wp/v2/posts/?per_page=30&page=\(n)"
         guard let request = URL(string: allNewsUrl) else { return }
+        print(request)
         
         let task = URLSession.shared.dataTask(with: request) { (data,response,error) in
             

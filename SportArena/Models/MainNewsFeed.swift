@@ -7,7 +7,7 @@
 import UIKit
 
 struct MainNewsFeed: Decodable {
-        var headline: String?
-        var time: String?
-        var id: String?
+    var headline: String?
+    var time: String?
+    var id: String?
 }

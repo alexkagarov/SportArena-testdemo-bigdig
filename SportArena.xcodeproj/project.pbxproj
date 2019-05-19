@@ -182,11 +182,11 @@
 		9557923B211B5015003CA688 /* SportArena */ = {
 			isa = PBXGroup;
 			children = (
+				5F6D50F42291E1660085D8D0 /* JSON.swift */,
 				5FB06B8522798D06006A5C32 /* VC */,
 				5FB06B8722798D4C006A5C32 /* Models */,
 				5FB06B8822798D58006A5C32 /* Storyboards */,
 				5FB06B8922798D63006A5C32 /* Storyboard Support */,
-				5F6D50F42291E1660085D8D0 /* JSON.swift */,
 				9557924A211B5018003CA688 /* Info.plist */,
 				95579245211B5018003CA688 /* Assets.xcassets */,
 				9557923C211B5015003CA688 /* AppDelegate.swift */,

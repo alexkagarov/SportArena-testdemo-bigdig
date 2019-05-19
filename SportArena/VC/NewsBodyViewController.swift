@@ -30,8 +30,8 @@ class NewsBodyViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    func getJSONnews (from idfornews: String) {
-        let newsUrl = "https://sportarena.com/wp-api/wp/v2/posts/"+idfornews+"?_embed"
+    func getJSONnews (from requestNewsID: String) {
+        let newsUrl = "https://sportarena.com/wp-api/wp/v2/posts/"+requestNewsID+"?_embed"
         guard let request = URL(string: newsUrl) else { return }
         print(request)
         

@@ -76,6 +76,7 @@ class AnotherMainPageViewController: UIViewController {
     func MainNewsJSON () {
         let mainNewsUrl = "https://sportarena.com/wp-api/generalnews2018/general/num/10/"
         guard let request = URL(string: mainNewsUrl) else { return }
+        print(request)
         
         let task = URLSession.shared.dataTask(with: request) { (data,response,error) in
             
