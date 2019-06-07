@@ -1,12 +1,12 @@
 //
-//  FirstViewController.swift
+//  
 //  SportArena
 //
 //
 
 import UIKit
 
-class AnotherMainPageViewController: UIViewController {
+class MainPageViewController: UIViewController {
     @IBOutlet weak var mainPageTableView: UITableView!
     
     var topNewsArray: [TopNews]? = []
@@ -34,7 +34,7 @@ class AnotherMainPageViewController: UIViewController {
         }
     }
     
-    func TopNewsJSON () {
+    func TopNewsJSON() {
         let topNewsUrl = "https://sportarena.com/wp-api/topnews2018/top/"
         guard let urlRequest = URL(string: topNewsUrl) else { return }
         
@@ -73,7 +73,7 @@ class AnotherMainPageViewController: UIViewController {
         task.resume()
     }
     
-    func MainNewsJSON () {
+    func MainNewsJSON() {
         let mainNewsUrl = "https://sportarena.com/wp-api/generalnews2018/general/num/10/"
         guard let request = URL(string: mainNewsUrl) else { return }
         print(request)
@@ -111,7 +111,7 @@ class AnotherMainPageViewController: UIViewController {
     
 }
 
-extension AnotherMainPageViewController: UITableViewDelegate {
+extension MainPageViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.section {
         case 0:
@@ -130,7 +130,7 @@ extension AnotherMainPageViewController: UITableViewDelegate {
     }
 }
 
-extension AnotherMainPageViewController: UITableViewDataSource {
+extension MainPageViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 3
     }

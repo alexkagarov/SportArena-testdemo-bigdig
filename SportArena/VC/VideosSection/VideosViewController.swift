@@ -31,27 +31,28 @@ class VideosViewController: UIViewController {
             
             self.videonews = [VideoNews]()
             do {
-                let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as! NSArray
+                guard let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSArray else { return }
                 
-                for arrayX in json as! [[String: Any]] {
+                for dataArray in json as! [[String: Any]] {
                     var videoNewsInstance = VideoNews()
                     
-                    if let ID = arrayX["id"],
-                        let date = arrayX["datetime"],
-                        let title = arrayX["title"],
-                        let image_url = arrayX["img"] {
-                        videoNewsInstance.headline = Html().convert(from: title as! String)
-                        videoNewsInstance.image = image_url as? String
-                        videoNewsInstance.id = "\(ID)"
-                        videoNewsInstance.date = date as? String
-                        videoNewsInstance.categories = "76"
-                        videoNewsInstance.tag = "76"
-                    }
+                    if let ID = dataArray["id"],
+                        let date = dataArray["datetime"],
+                        let title = dataArray["title"],
+                        let image_url = dataArray["img"] {
+                            videoNewsInstance.headline = Html().convert(from: title as! String)
+                            videoNewsInstance.image = image_url as? String
+                            videoNewsInstance.id = "\(ID)"
+                            videoNewsInstance.date = date as? String
+                            videoNewsInstance.categories = "76"
+                            videoNewsInstance.tag = "76"
+                        }
                     self.videonews?.append(videoNewsInstance)
                 }
                 DispatchQueue.main.async {
                     self.videoTableview.reloadData()
                 }
+                
             } catch let error {
                 print(error)
             }
@@ -80,27 +81,16 @@ extension VideosViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "videoCell", for: indexPath) as! VideoNewsCell
-        //let resource = ImageResource(downloadURL: URL(string: (self.videonews?[indexPath.item].image!)!)!, cacheKey: self.videonews?[indexPath.item].image!)
         
-        cell.imageView!.downloadImage(from: ((self.videonews?[indexPath.item].image)!))
-        
-        //cell.imageView!.image = nil
-        
-        /* NOTE: !!!Kingfisher CocoaPod for this method is removed from project!!!
-        //cell.imageView!.kf.setImage(with: resource)
-         */
+        cell.imageView!.downloadImage(from: (self.videonews?[indexPath.item].image)!)
         
         cell.titleVideo.text = self.videonews?[indexPath.item].headline
         return cell
         
     }
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.videonews!.count
+        return (self.videonews?.count)!
     }
 }
 

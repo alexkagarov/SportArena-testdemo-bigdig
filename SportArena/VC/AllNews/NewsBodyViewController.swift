@@ -35,9 +35,19 @@ class NewsBodyViewController: UIViewController {
         guard let request = URL(string: newsUrl) else { return }
         print(request)
         
-        let task = URLSession.shared.dataTask(with: request) { (data,response,error) in
+        let task = URLSession.shared.dataTask(with: request) { (data,response,error) in DispatchQueue.main.async {
+            
+            if let error = error {
+                print(error)
+                return
+            }
+            
+            guard let data = data else { return }
+            
             do {
-                let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as! [String: AnyObject]
+                let decoder = JSONDecoder()
+                
+                let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as! [String: AnyObject]
                 
                 let content = json["content"] as? [String: Any]
                 let content_text = content!["rendered"] as! String
@@ -55,16 +65,18 @@ class NewsBodyViewController: UIViewController {
                 DispatchQueue.main.async {
                     self.imageNews.downloadImage(from: image_url)
                     
-                    self.newsText.attributedText = content_text.htmlAttributed.0
-                    self.newsText.font = UIFont(name: "Helvetica", size: 16.0)
-                    
                     self.subtitleNews.attributedText = subtitle_text.htmlAttributed.0
-                    self.subtitleNews.font = UIFont(name: "Helvetica", size: 16.0)
+                    self.subtitleNews.font = UIFont(name: "Helvetica", size: 14.0)
+                    
+                    self.newsText.attributedText = content_text.htmlAttributed.0
+                    self.newsText.font = UIFont(name: "Helvetica", size: 14.0)
                 }
                 
-            } catch let error {
-                print(error)
+            } catch let jsonError {
+                print(jsonError)
             }
+            }
+            
         }
         task.resume()
     }

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5F18D2DD22712E1E009E6BED /* AnotherMainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F18D2DC22712E1D009E6BED /* AnotherMainPageViewController.swift */; };
+		5F18D2DD22712E1E009E6BED /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F18D2DC22712E1D009E6BED /* MainPageViewController.swift */; };
 		5F18D2DF227144C9009E6BED /* DividerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F18D2DE227144C9009E6BED /* DividerTableViewCell.swift */; };
 		5F18D2E122722275009E6BED /* MatchCentreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F18D2E022722275009E6BED /* MatchCentreViewController.swift */; };
 		5F18D2E322722405009E6BED /* MatchBodyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F18D2E222722405009E6BED /* MatchBodyViewController.swift */; };
@@ -45,7 +45,7 @@
 		0EC7879E9D51CC0BDA834937 /* Pods-SportArenaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportArenaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SportArenaTests/Pods-SportArenaTests.debug.xcconfig"; sourceTree = "<group>"; };
 		162858FBBEF043A8887324AD /* Pods_SportArenaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SportArenaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3718F4F3328F519919ECB0C2 /* Pods-SportArena.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SportArena.release.xcconfig"; path = "Pods/Target Support Files/Pods-SportArena/Pods-SportArena.release.xcconfig"; sourceTree = "<group>"; };
-		5F18D2DC22712E1D009E6BED /* AnotherMainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnotherMainPageViewController.swift; sourceTree = "<group>"; };
+		5F18D2DC22712E1D009E6BED /* MainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
 		5F18D2DE227144C9009E6BED /* DividerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DividerTableViewCell.swift; sourceTree = "<group>"; };
 		5F18D2E022722275009E6BED /* MatchCentreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCentreViewController.swift; sourceTree = "<group>"; };
 		5F18D2E222722405009E6BED /* MatchBodyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchBodyViewController.swift; sourceTree = "<group>"; };
@@ -98,31 +98,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5FB06B8522798D06006A5C32 /* VC */ = {
+		5F273E0422AA8003007BA382 /* VideosSection */ = {
 			isa = PBXGroup;
 			children = (
-				5FB06B8622798D33006A5C32 /* Cells */,
-				9570CF582129CA9C00B778F2 /* NewsBodyViewController.swift */,
-				5F2A44002273068F00ED1AD5 /* VideoNewsBodyViewController.swift */,
-				5F18D2E222722405009E6BED /* MatchBodyViewController.swift */,
-				5F18D2E022722275009E6BED /* MatchCentreViewController.swift */,
-				5F18D2DC22712E1D009E6BED /* AnotherMainPageViewController.swift */,
-				95579240211B5015003CA688 /* AllNewsViewController.swift */,
 				95AB0BD9211B64C2008956A0 /* VideosViewController.swift */,
+				95BA79D321380EC4001084DC /* VideoNewsCell.swift */,
+				5F2A44002273068F00ED1AD5 /* VideoNewsBodyViewController.swift */,
 			);
-			path = VC;
+			path = VideosSection;
 			sourceTree = "<group>";
 		};
-		5FB06B8622798D33006A5C32 /* Cells */ = {
+		5F273E0522AA8026007BA382 /* MainPage */ = {
 			isa = PBXGroup;
 			children = (
 				5F18D2DE227144C9009E6BED /* DividerTableViewCell.swift */,
-				959DEE84211D678600330682 /* TopNewsCell.swift */,
 				9566FFFE212C9938003B3F83 /* MainNewsCell.swift */,
-				959DEE80211C3BA500330682 /* NewsFeedCell.swift */,
-				95BA79D321380EC4001084DC /* VideoNewsCell.swift */,
+				959DEE84211D678600330682 /* TopNewsCell.swift */,
+				5F18D2DC22712E1D009E6BED /* MainPageViewController.swift */,
 			);
-			path = Cells;
+			path = MainPage;
+			sourceTree = "<group>";
+		};
+		5F273E0622AA8056007BA382 /* AllNews */ = {
+			isa = PBXGroup;
+			children = (
+				959DEE80211C3BA500330682 /* NewsFeedCell.swift */,
+				9570CF582129CA9C00B778F2 /* NewsBodyViewController.swift */,
+				95579240211B5015003CA688 /* AllNewsViewController.swift */,
+			);
+			path = AllNews;
+			sourceTree = "<group>";
+		};
+		5F273E0722AA806B007BA382 /* MatchCentre */ = {
+			isa = PBXGroup;
+			children = (
+				5F18D2E222722405009E6BED /* MatchBodyViewController.swift */,
+				5F18D2E022722275009E6BED /* MatchCentreViewController.swift */,
+			);
+			path = MatchCentre;
+			sourceTree = "<group>";
+		};
+		5FB06B8522798D06006A5C32 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				5F273E0722AA806B007BA382 /* MatchCentre */,
+				5F273E0622AA8056007BA382 /* AllNews */,
+				5F273E0522AA8026007BA382 /* MainPage */,
+				5F273E0422AA8003007BA382 /* VideosSection */,
+			);
+			path = VC;
 			sourceTree = "<group>";
 		};
 		5FB06B8722798D4C006A5C32 /* Models */ = {
@@ -150,15 +174,16 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
-		5FB06B8922798D63006A5C32 /* Storyboard Support */ = {
+		5FB06B8922798D63006A5C32 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
+				5F6D50F42291E1660085D8D0 /* JSON.swift */,
 				958B815B213C051600AF0DD9 /* Html.swift */,
 				95BA79D721382516001084DC /* ImageDisplay.swift */,
 				9524FEB72134585400042543 /* TimeEditor.swift */,
 				5F2A43FE2272FECE00ED1AD5 /* AttributedStringMagic.swift */,
 			);
-			path = "Storyboard Support";
+			path = "Support Files";
 			sourceTree = "<group>";
 		};
 		95579230211B5015003CA688 = {
@@ -182,15 +207,14 @@
 		9557923B211B5015003CA688 /* SportArena */ = {
 			isa = PBXGroup;
 			children = (
-				5F6D50F42291E1660085D8D0 /* JSON.swift */,
 				5FB06B8522798D06006A5C32 /* VC */,
 				5FB06B8722798D4C006A5C32 /* Models */,
 				5FB06B8822798D58006A5C32 /* Storyboards */,
-				5FB06B8922798D63006A5C32 /* Storyboard Support */,
-				9557924A211B5018003CA688 /* Info.plist */,
-				95579245211B5018003CA688 /* Assets.xcassets */,
+				5FB06B8922798D63006A5C32 /* Support Files */,
 				9557923C211B5015003CA688 /* AppDelegate.swift */,
 				95C569FA217291EA00F40B77 /* GoogleService-Info.plist */,
+				9557924A211B5018003CA688 /* Info.plist */,
+				95579245211B5018003CA688 /* Assets.xcassets */,
 			);
 			path = SportArena;
 			sourceTree = "<group>";
@@ -367,7 +391,7 @@
 				9524FEB82134585400042543 /* TimeEditor.swift in Sources */,
 				959DEE85211D678600330682 /* TopNewsCell.swift in Sources */,
 				5F18D2DF227144C9009E6BED /* DividerTableViewCell.swift in Sources */,
-				5F18D2DD22712E1E009E6BED /* AnotherMainPageViewController.swift in Sources */,
+				5F18D2DD22712E1E009E6BED /* MainPageViewController.swift in Sources */,
 				5F2A43FF2272FECE00ED1AD5 /* AttributedStringMagic.swift in Sources */,
 				5F18D2E322722405009E6BED /* MatchBodyViewController.swift in Sources */,
 				9566FFFD212C7FBB003B3F83 /* MainNewsFeed.swift in Sources */,
@@ -517,6 +541,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SportArena/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -535,6 +560,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = SportArena/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
